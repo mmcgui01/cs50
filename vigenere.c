@@ -8,7 +8,7 @@ int main(int argc, string argv[])
 {
     
     
-        if(argc != 2)
+        if(argc != 2)                        /*Only one argument is accepted*/
             {
                 printf("Try again\n");
                 return 1;
@@ -18,7 +18,7 @@ int main(int argc, string argv[])
         int klen = strlen(k);
     
     
-        for(int x = 0; x < klen; x++)
+        for(int x = 0; x < klen; x++)      /*Processing k, can only be alpha, forced to lowercase*/
             {
                 if(isalpha(k[x]))
                     {
@@ -40,17 +40,17 @@ int main(int argc, string argv[])
         
         int clen = strlen(code);
         
-        for(int a = 0, b = 0; a < clen; a++)
+        for(int a = 0, b = 0; a < clen; a++)     /*The code loop*/
             {
                 if(isalpha(code[a]))
                     {
-                        int key = k[b%klen];
-                        if(isupper(code[a]))
+                        int key = k[b%klen];     /*k wraps around the code*/
+                        if(isupper(code[a]))     /*If code character is uppercase*/
                             {
                                 printf("%c", (((code[a] - 'A') + key)%26) + 'A');
                                 b++;
                             }
-                        else
+                        else                     /*If code character is lower*/
                             {
                                 printf("%c", (((code[a] - 'a') + key)%26) + 'a');
                                 b++;
@@ -58,7 +58,7 @@ int main(int argc, string argv[])
                     }
                 else
                     {
-                        printf("%c", code[a]);
+                        printf("%c", code[a]);  /*If code character is not alpha*/
                     }
             }
         printf("\n");
