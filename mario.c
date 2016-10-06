@@ -7,19 +7,19 @@ do
 {
     
     printf("Type a positive number under 23: \n");
-    height = GetInt();
+    height = GetInt();                   /*Get height of pyramid*/
 }
-while (height < 0 || height > 23);
+while (height < 0 || height > 23);      /*Height has max of 23*/
 
 for(int x = 0; x < height; x++)
 {
-    for(int y = 0; y < height - x - 1; y++)
+    for(int y = 0; y < height - x - 1; y++)    /*Print number of spaces*/
     {
         printf(" ");
     }
     for(int z = 0; z < x + 2; z++)
     {
-        printf("#");
+        printf("#");       /**/
     }
     {
         printf("\n");
